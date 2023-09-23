@@ -5,7 +5,7 @@ import { getAllTodos } from "@/api";
 
 export default async function Home() {
   const tasks = await getAllTodos();
-  console.log(tasks);
+  // console.log(tasks);
   return (
     <main className="max-w-4xl border-2 border-red-500 mx-auto mt-4">
       <div className="text-center my-5 flex flex-col gap-4">

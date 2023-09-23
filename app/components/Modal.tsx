@@ -2,29 +2,35 @@
 import React, { useState } from "react";
 
 interface ModalProps {
-  setOpen: (param: boolean) => void;
+  setOpen: (open: boolean) => void;
   open: boolean;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ setOpen, open }) => {
-  const modalClass = open ? "modal modal-open" : "modal";
-  //   console.log(open);
-
+const Modal: React.FC<ModalProps> = ({ setOpen, open, children }) => {
+  // console.log(open);
+  // console.log(setOpen);
   return (
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      <button className="btn" onClick={() => setOpen(true)}>
+      {/* <button className="btn" onClick={() => setOpen(true)}>
         open modal
-      </button>
-      <dialog id="my_modal_4" className={modalClass}>
+      </button> */}
+      <dialog id="my_modal_3" className={`modal ${open ? "modal-open" : ""}`}>
         <div className="modal-box w-11/12 max-w-5xl">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Click the button below to close</p>
+          {children}
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button, it will close the modal */}
-              <button className="btn" onClick={() => setOpen(false)}>
-                Close
+              <button
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                onClick={() => {
+                  console.log("click");
+                  setOpen(false);
+                  // console.log(open);
+                }}
+              >
+                ✕
               </button>
             </form>
           </div>
