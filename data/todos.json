@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "text": "Learn Javascript"
+    },
+    {
+      "id": "2",
+      "text": "Learn NextJs"
+    },
+    {
+      "id": "3",
+      "text": "Learn Prisma"
+    }
+  ]
+}
